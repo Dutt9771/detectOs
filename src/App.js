@@ -50,9 +50,13 @@ function App() {
     var os = detectOS();
 
     if (os === "iOS") {
-      window.location.href = "https://apps.apple.com"; // Redirect to Apple App Store
+      // window.location.href = "https://apps.apple.com"; // Redirect to Apple App Store
+      window.location.href =
+        "https://apps.apple.com/us/app/whatsapp-messenger/id310633997"; // Redirect to Apple App Store
     } else if (os === "Android") {
-      window.location.href = "https://play.google.com/store"; // Redirect to Google Play Store
+      // window.location.href = "https://play.google.com/store"; // Redirect to Google Play Store
+      window.location.href =
+        "https://play.google.com/store/apps/details?id=com.whatsapp&hl=en_IN&gl=US"; // Redirect to Google Play Store
     } else if (os === "Windows" || os === "Windows Phone") {
       window.location.href = "https://www.microsoft.com/store/apps"; // Redirect to Microsoft Store
     } else {
