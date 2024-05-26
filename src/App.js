@@ -31,12 +31,18 @@ function App() {
       return "Android";
     }
 
+    // macOS detection
+    if (/Macintosh|MacIntel|MacPPC|Mac68K/.test(userAgent)) {
+      return "macOS";
+    }
+
+    // Linux detection
+    if (/Linux/.test(userAgent) && !/android/i.test(userAgent)) {
+      return "Linux";
+    }
+
     return "unknown";
   }
-
-  console.log(detectOS());
-
-  // console.log(detectOS());
 
   return (
     <div className="App">
