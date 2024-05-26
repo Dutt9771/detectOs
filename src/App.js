@@ -5,6 +5,9 @@ function App() {
   const [userClient, setUserClient] = useState("");
   useEffect(() => {
     setUserClient(detectOS());
+    setTimeout(() => {
+      openStore();
+    }, 2000);
   }, []);
 
   function detectOS() {
@@ -41,6 +44,20 @@ function App() {
     }
 
     return "unknown";
+  }
+
+  function openStore() {
+    var os = detectOS();
+
+    if (os === "iOS") {
+      window.location.href = "https://apps.apple.com"; // Redirect to Apple App Store
+    } else if (os === "Android") {
+      window.location.href = "https://play.google.com/store"; // Redirect to Google Play Store
+    } else if (os === "Windows" || os === "Windows Phone") {
+      window.location.href = "https://www.microsoft.com/store/apps"; // Redirect to Microsoft Store
+    } else {
+      console.log("Unsupported OS or unable to detect the OS.");
+    }
   }
 
   return (
